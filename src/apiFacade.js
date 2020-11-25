@@ -62,6 +62,13 @@ function apiFacade() {
 
     return fetch(URL + "/api/info/parrallel/", options).then(handleHttpErrors);
   };
+
+  const fetchCountry = () => {
+    const options = makeOptions("GET");
+
+    return fetch(URL + "###resten af stien til country###");
+  };
+
   const makeOptions = (method, addToken, body) => {
     var opts = {
       method: method,
@@ -87,7 +94,8 @@ function apiFacade() {
     logout,
     fetchData,
     fetchStarwars,
-    getRole
+    getRole,
+    fetchCountry,
   };
 }
 

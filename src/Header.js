@@ -25,6 +25,11 @@ function Header(props) {
             Starwars
           </NavLink>
         </li>
+        <li>
+          <NavLink activeClassName="active" to="/countryList">
+            Country List
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
