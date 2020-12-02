@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import facade from "./apiFacade";
 import LogIn, { LoggedIn } from "./LogIn.js";
 import Header from "./Header.js";
-import Starwars from "./Starwars.js";
 import Admin from "./Admin.js";
 import User from "./User.js";
-import CountryList from "./CountryList";
+import Countries from "./Countries";
 import { Switch, Route } from "react-router-dom";
 
 function App() {
@@ -31,11 +30,8 @@ function App() {
     <div>
       <Header />
       <Switch>
-        <Route path="/starwars">
-          <Starwars />
-        </Route>
         <Route path="/countryList">
-          <CountryList />
+          <Countries />
         </Route>
         {!loggedIn ? (
           <div>
