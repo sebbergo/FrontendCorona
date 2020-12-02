@@ -57,16 +57,15 @@ function apiFacade() {
     return fetch(URL + "/api/info/" + role, options).then(handleHttpErrors);
   };
 
-  const fetchStarwars = () => {
+
+  const fetchCountries = () => {
     const options = makeOptions("GET");
+    return fetch (URL + "/api/corona/countries/", options).then(handleHttpErrors);
+  }
 
-    return fetch(URL + "/api/info/parrallel/", options).then(handleHttpErrors);
-  };
-
-  const fetchCountry = () => {
+  const fetchCountry = (name) => {
     const options = makeOptions("GET");
-
-    return fetch(URL + "###resten af stien til country###");
+    return fetch(URL + "/api/corona/country/" + name, options).then(handleHttpErrors);
   };
 
   const makeOptions = (method, addToken, body) => {
@@ -93,9 +92,9 @@ function apiFacade() {
     login,
     logout,
     fetchData,
-    fetchStarwars,
     getRole,
     fetchCountry,
+    fetchCountries
   };
 }
 
