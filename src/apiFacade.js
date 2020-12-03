@@ -38,6 +38,19 @@ function apiFacade() {
       });
   };
 
+  const register = (user, pass1, pass2) => {
+    const options = makeOptions("POST", true, {
+      username: user,
+      password1: pass1,
+      password2: pass2,
+    });
+    return fetch(URL + "/api/login/register", options)
+      .then(handleHttpErrors)
+      .then((res) => {
+        setToken(res.token);
+      });
+  };
+
   const getRole = () => {
     let myToken = getToken();
     let tokenData = myToken.split(".")[1];
@@ -57,15 +70,18 @@ function apiFacade() {
     return fetch(URL + "/api/info/" + role, options).then(handleHttpErrors);
   };
 
-
   const fetchCountries = () => {
     const options = makeOptions("GET");
-    return fetch (URL + "/api/corona/countries/", options).then(handleHttpErrors);
-  }
+    return fetch(URL + "/api/corona/countries/", options).then(
+      handleHttpErrors
+    );
+  };
 
   const fetchCountry = (name) => {
     const options = makeOptions("GET");
-    return fetch(URL + "/api/corona/country/" + name, options).then(handleHttpErrors);
+    return fetch(URL + "/api/corona/country/" + name, options).then(
+      handleHttpErrors
+    );
   };
 
   const makeOptions = (method, addToken, body) => {
@@ -94,7 +110,8 @@ function apiFacade() {
     fetchData,
     getRole,
     fetchCountry,
-    fetchCountries
+    fetchCountries,
+    register,
   };
 }
 
