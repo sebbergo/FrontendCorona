@@ -4,7 +4,7 @@ import { Link, useRouteMatch, Switch, Route } from "react-router-dom";
 import "./login.css";
 import Register from "./Register";
 
-function LogIn({ login }) {
+function LogIn({ login, register }) {
   const init = { username: "", password: "" };
   const [loginCredentials, setLoginCredentials] = useState(init);
 
@@ -43,11 +43,9 @@ function LogIn({ login }) {
           <Register />
         </Route>
 
-        <Route
-          path={`${match.path}/register`}
-          exact
-          component={Register}
-        ></Route>
+        <Route path={`${match.path}/register`}>
+          <Register register={register} />
+        </Route>
       </Switch>
     </div>
   );
