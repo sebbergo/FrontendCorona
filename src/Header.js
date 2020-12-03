@@ -11,23 +11,23 @@ function Header(props) {
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/user">
-            User
+          <NavLink activeClassName="active" to="/logIn">
+            Login
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/admin">
-            Admin
+          <NavLink activeClassName="active" to="/country">
+            Country
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/starwars">
-            Starwars
+          <NavLink activeClassName="active" to="/symptoms">
+            Symptoms
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/countryList">
-            Country List
+          <NavLink activeClassName="active" to="/ordertest">
+            Order Test
           </NavLink>
         </li>
       </ul>

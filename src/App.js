@@ -4,7 +4,7 @@ import LogIn, { LoggedIn } from "./LogIn.js";
 import Header from "./Header.js";
 import Admin from "./Admin.js";
 import User from "./User.js";
-import Countries from "./Countries";
+import Country from "./Country.js";
 import { Switch, Route } from "react-router-dom";
 
 function App() {
@@ -30,12 +30,12 @@ function App() {
     <div>
       <Header />
       <Switch>
-        <Route path="/countryList">
-          <Countries />
+        <Route path="/country">
+          <Country />
         </Route>
         {!loggedIn ? (
           <div>
-            <Route exact path="/">
+            <Route exact path="/logIn">
               <LogIn login={login} />
               <p>{error}</p>
               <h3>Hejsa, hvis du ikke er Lukas, så velkommen:</h3>
