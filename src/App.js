@@ -6,7 +6,10 @@ import Admin from "./Admin.js";
 import User from "./User.js";
 import Country from "./Country.js";
 import { Switch, Route, Link } from "react-router-dom";
+import Symptoms from "./Symptoms.js"
 import "./App.css";
+
+
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [error, setError] = useState("");
@@ -42,6 +45,11 @@ function App() {
         <Route path="/country">
           <Country />
         </Route>
+
+        <Route path="/symptoms">
+          <Symptoms />
+        </Route>
+
         {!loggedIn ? (
           <div>
             <Route exact path="/logIn">
@@ -50,33 +58,33 @@ function App() {
             </Route>
           </div>
         ) : (
-          <div>
             <div>
-              <Route exact path="/">
-                <LoggedIn />
-                <button onClick={logout}>Logout</button>
-              </Route>
+              <div>
+                <Route exact path="/">
+                  <LoggedIn />
+                  <button onClick={logout}>Logout</button>
+                </Route>
+              </div>
+              <div>
+                <Route path="/user">
+                  {facade.getRole() === "user" ? (
+                    <User />
+                  ) : (
+                      <p>Du er ikke logget ind som user</p>
+                    )}
+                </Route>
+              </div>
+              <div>
+                <Route path="/admin">
+                  {facade.getRole() === "admin" ? (
+                    <Admin />
+                  ) : (
+                      <p>Du er ikke logget ind som admin</p>
+                    )}
+                </Route>
+              </div>
             </div>
-            <div>
-              <Route path="/user">
-                {facade.getRole() === "user" ? (
-                  <User />
-                ) : (
-                  <p>Du er ikke logget ind som user</p>
-                )}
-              </Route>
-            </div>
-            <div>
-              <Route path="/admin">
-                {facade.getRole() === "admin" ? (
-                  <Admin />
-                ) : (
-                  <p>Du er ikke logget ind som admin</p>
-                )}
-              </Route>
-            </div>
-          </div>
-        )}
+          )}
       </Switch>
     </div>
   );
