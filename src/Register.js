@@ -27,8 +27,8 @@ function Register({ register }) {
       <h2 style={{ marginBottom: "20px" }}>Register</h2>
       <form onChange={onChange}>
         <input placeholder="User Name" id="username" />
-        <input placeholder="Password" id="password1" />
-        <input placeholder="Password" id="password2" />
+        <input type="password" placeholder="Password" id="password1" />
+        <input type="password" placeholder="Password" id="password2" />
         <button className="button-register" onClick={performRegister}>
           Register
         </button>

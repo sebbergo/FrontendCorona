@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import facade from "./apiFacade";
-import { Link, useRouteMatch, Switch, Route } from "react-router-dom";
+import {
+  Link,
+  useRouteMatch,
+  Switch,
+  Route,
+  BrowserRouter as Router,
+} from "react-router-dom";
 import "./login.css";
 import Register from "./Register";
 
@@ -24,30 +30,31 @@ function LogIn({ login, register }) {
   let match = useRouteMatch();
 
   return (
-    <div>
-      <br></br>
-      <h2 style={{ marginBottom: "20px" }}>Login</h2>
-      <form onChange={onChange}>
-        <input placeholder="User Name" id="username" />
-        <input placeholder="Password" id="password" />
-        <button className="button-login" onClick={performLogin}>
-          Login
-        </button>
-      </form>
-      <Link to={`${match.url}/register`}>
-        {(console.log(match.url), console.log(match.path))}
-        <button className="button-register">Press here to register</button>
-      </Link>
-      <Switch>
-        <Route exact path={match.path}>
-          <Register />
-        </Route>
+    <Router>
+      <div>
+        <br></br>
+        <h2 style={{ marginBottom: "20px" }}>Login</h2>
+        <form onChange={onChange}>
+          <input placeholder="User Name" id="username" />
+          <input type="password" placeholder="Password" id="password" />
 
-        <Route path={`${match.path}/register`}>
-          <Register register={register} />
-        </Route>
-      </Switch>
-    </div>
+          <button className="button-login" onClick={performLogin}>
+            Login
+          </button>
+        </form>
+
+        <Link to={`${match.url}/register`}>
+          {(console.log(match.url), console.log(match.path))}
+          <button className="button-register">Press here to register</button>
+        </Link>
+
+        <Switch>
+          <Route path={`${match.path}/register`}>
+            <Register register={register} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 function LoggedIn() {
