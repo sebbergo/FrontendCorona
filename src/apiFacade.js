@@ -51,6 +51,22 @@ function apiFacade() {
       });
   };
 
+  const orderTest = (country, city, zip, street) => {
+    const options = makeOptions("POST", true, {
+      country: country,
+      city: city,
+      zip: zip,
+      street: street,
+      email: getEmail(),
+    });
+
+    return fetch(URL + "/api/corona/ordertest", options)
+      .then(handleHttpErrors)
+      .then((res) => {
+        setToken(res.token);
+      });
+  };
+
   const getRole = () => {
     let myToken = getToken();
     let tokenData = myToken.split(".")[1];
@@ -60,6 +76,17 @@ function apiFacade() {
     console.log(role);
 
     return role;
+  };
+
+  const getEmail = () => {
+    let myToken = getToken();
+    let tokenData = myToken.split(".")[1];
+    let decoedeJsonData = window.atob(tokenData);
+    let decodedJwtData = JSON.parse(decoedeJsonData);
+    let email = decodedJwtData.username;
+    console.log(email);
+
+    return email;
   };
 
   const fetchData = () => {
@@ -112,6 +139,8 @@ function apiFacade() {
     fetchCountry,
     fetchCountries,
     register,
+    orderTest,
+    getEmail,
   };
 }
 

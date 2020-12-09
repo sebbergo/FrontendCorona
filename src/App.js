@@ -8,6 +8,7 @@ import Country from "./Country.js";
 import { Switch, Route, Link } from "react-router-dom";
 import Symptoms from "./Symptoms.js";
 import "./App.css";
+import OrderTest from "./OrderTest.js";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -37,6 +38,12 @@ function App() {
       });
   };
 
+  const orderTest = (country, city, zip, street) => {
+    facade.orderTest(country, city, zip, street).catch((err) => {
+      setError("Du mangler at udfylde et af felterne");
+    });
+  };
+
   return (
     <div>
       <Header />
@@ -47,6 +54,10 @@ function App() {
 
         <Route path="/symptoms">
           <Symptoms />
+        </Route>
+
+        <Route path="/orderTest">
+          <OrderTest orderTest={orderTest} />
         </Route>
 
         {!loggedIn ? (

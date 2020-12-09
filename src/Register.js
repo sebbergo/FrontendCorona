@@ -21,6 +21,7 @@ function Register({ register }) {
       [evt.target.id]: evt.target.value,
     });
   };
+
   return (
     <div>
       <br></br>
