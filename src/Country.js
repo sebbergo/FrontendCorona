@@ -2,6 +2,7 @@ import facade from "./apiFacade.js";
 import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Dropdown from "react-bootstrap/Dropdown";
+import "./App.css";
 
 function Country() {
   let obj = {
@@ -15,30 +16,41 @@ function Country() {
     CaseFatalityRatio: "",
     DailyIncidenceConfirmedCases: "",
     SevenDaySmoothedDailyChange: "",
-    CumulativeTotal: ""
+    CumulativeTotal: "",
   };
 
   const [country, setCountry] = useState(obj);
-  const [countryList, setCountryList] = useState([])
+  const [countryList, setCountryList] = useState([]);
 
   useEffect(() => {
     facade.fetchCountries().then((data) => setCountryList(data));
   }, []);
 
   const handleSelect = (evt) => {
-    console.log(evt)
-    facade.fetchCountry(evt).then((data) => setCountry(data))
-  }
+    console.log(evt);
+    facade.fetchCountry(evt).then((data) => setCountry(data));
+  };
 
   return (
     <div>
-      <Dropdown >
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+      <Dropdown>
+        <Dropdown.Toggle
+          bsStyle="default"
+          bsSize="small"
+          style={{ maxHeight: "50px" }}
+          title={"Qty"}
+          key={1}
+          id="dropdown-size-small"
+          variant="success"
+          id="dropdown-basic"
+        >
           Select Country
-        </Dropdown.Toggle >
-        <Dropdown.Menu  >
+        </Dropdown.Toggle>
+        <Dropdown.Menu className="dropdown-menu">
           {countryList.map((country) => (
-            <Dropdown.Item onSelect={handleSelect} eventKey={country.Country} >{country.Country}</Dropdown.Item>
+            <Dropdown.Item onSelect={handleSelect} eventKey={country.Country}>
+              {country.Country}
+            </Dropdown.Item>
           ))}
         </Dropdown.Menu>
       </Dropdown>
