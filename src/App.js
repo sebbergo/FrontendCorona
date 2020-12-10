@@ -9,6 +9,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import Symptoms from "./Symptoms.js";
 import "./App.css";
 import OrderTest from "./OrderTest.js";
+import Footer from "./Footer.js";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -95,6 +96,7 @@ function App() {
             </div>
           </div>
         )}
+        <Footer />
       </Switch>
     </div>
   );
