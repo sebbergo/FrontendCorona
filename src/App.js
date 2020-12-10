@@ -9,8 +9,8 @@ import { Switch, Route, Link } from "react-router-dom";
 import Symptoms from "./Symptoms.js";
 import "./App.css";
 import OrderTest from "./OrderTest.js";
-import Footer from "./Footer.js";
-import "bootstrap/dist/css/bootstrap.min.css";
+import FooterPage from "./Footer.js";
+
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [error, setError] = useState("");
@@ -97,7 +97,7 @@ function App() {
           </div>
         )}
       </Switch>
-      <Footer />
+      <FooterPage />
     </div>
   );
 }
