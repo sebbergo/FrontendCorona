@@ -1,27 +1,54 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 function Footer() {
   return (
-    <div>
-      <footer class="page-footer font-small mdb-color darken-3 pt-4">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-md-6">
-              <div class="embed-responsive embed-responsive-16by9 mb-4">
-                <iframe
-                  class="embed-responsive-item"
-                  src="https://www.youtube.com/embed/vlDzYIIOYmM"
-                  allowfullscreen
-                ></iframe>
-              </div>
+    <footer class="page-footer font-small cyan darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="c</footer>ol-md-12 py-5">
+            <div class="mb-5 flex-center">
+              <a class="fb-ic">
+                <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
+                  {" "}
+                </i>
+              </a>
+
+              <a class="tw-ic">
+                <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x">
+                  {" "}
+                </i>
+              </a>
+
+              <a class="gplus-ic">
+                <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x">
+                  {" "}
+                </i>
+              </a>
+
+              <a class="li-ic">
+                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x">
+                  {" "}
+                </i>
+              </a>
+
+              <a class="ins-ic">
+                <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x">
+                  {" "}
+                </i>
+              </a>
+
+              <a class="pin-ic">
+                <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+              </a>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="footer-copyright text-center py-3">
-          © 2020 Copyright:
-          <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-        </div>
-      </footer>
-    </div>
+      <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+      </div>
+    </footer>
   );
 }
 
