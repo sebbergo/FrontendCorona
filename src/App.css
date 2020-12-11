@@ -31,3 +31,12 @@
   height: 570px;
   overflow-y: scroll;
 }
+
+.main-footer {
+  color: white;
+  background-color: #333;
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

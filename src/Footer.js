@@ -1,39 +1,48 @@
 import React from "react";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const FooterPage = () => {
   return (
-    <MDBFooter color="green" className="font-small pt-4 mt-4">
-      <MDBContainer fluid className="text-center text-md-left">
-        <MDBRow>
-          <MDBCol md="6">
-            <h5 className="title">Made by kernen</h5>
-          </MDBCol>
-          <MDBCol md="6">
-            <h5 className="title">Links</h5>
-            <ul>
-              <li className="list-unstyled">
-                <a href="#!">Link 1</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Link 2</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Link 3</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-      <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="#"> Kernen </a>
-        </MDBContainer>
+    <div className="main-footer">
+      <div className="container">
+        <div className="row">
+          {/* Column1 */}
+          <div className="col">
+            <h2>About us</h2>
+            <li>We hope we pass exam</li>
+            <li>We love COD WZ</li>
+            <li>Our group is call Kernen</li>
+
+          </div>
+          {/* Column2 */}
+          <div className="col">
+            <h2>Members</h2>
+            <ui className="list-unstyled">
+              <li>Lukas Bang Stoltz</li>
+              <li>Sebastian Godsk Hansen</li>
+              <li>Sumit Dey</li>
+              <li>Phillip Andersen</li>
+              <li>Christoffer Wegner</li>
+            </ui>
+          </div>
+          {/* Column3 */}
+          <div className="col">
+            <h2>Random Stuff</h2>
+            <ui className="list-unstyled">
+              <li>Oksem Bilah</li>
+              <li>Sucuk durum kebab</li>
+              <li>Eid sugerah</li>
+            </ui>
+          </div>
+        </div>
+        <hr />
+        <div className="row">
+          <p className="col-sm">
+            KERNEN FOR WZ | All rights reserved |
+            Terms Of Service | You have to love playing warzone
+        </p>
+        </div>
       </div>
-    </MDBFooter>
+    </div>
   );
 };
 

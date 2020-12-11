@@ -10,6 +10,7 @@ import Symptoms from "./Symptoms.js";
 import "./App.css";
 import OrderTest from "./OrderTest.js";
 import FooterPage from "./Footer.js";
+import Home from "./Home.js"
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -49,6 +50,11 @@ function App() {
     <div>
       <Header />
       <Switch>
+
+      <Route path="/home">
+          <Home />
+        </Route>
+
         <Route path="/country">
           <Country />
         </Route>
