@@ -4,9 +4,11 @@ import { NavLink, Route, useParams, useRouteMatch } from "react-router-dom";
 function Header({ loggedIn }) {
   return (
     <div>
+      
+
       <ul className="header">
         <li>
-          <NavLink exact activeClassName="active" to="/">
+          <NavLink exact activeClassName="active" to="/home">
             Home
           </NavLink>
         </li>
@@ -41,6 +43,7 @@ function Header({ loggedIn }) {
           </NavLink>
         </li>
       </ul>
+
     </div>
   );
 }
