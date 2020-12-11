@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import facade from "./apiFacade";
 import LogIn, { LoggedIn } from "./LogIn.js";
 import Header from "./Header.js";
-import Admin from "./Admin.js";
-import User from "./User.js";
 import Country from "./Country.js";
 import { Switch, Route, Link } from "react-router-dom";
 import Symptoms from "./Symptoms.js";
@@ -14,7 +12,6 @@ import FooterPage from "./Footer.js";
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [error, setError] = useState("");
-  //const [role, setRole] = useState("");
 
   const logout = () => {
     facade.logout();
@@ -47,7 +44,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header loggedIn={loggedIn} />
       <Switch>
         <Route path="/country">
           <Country />
@@ -70,30 +67,9 @@ function App() {
           </div>
         ) : (
           <div>
-            <div>
-              <Route exact path="/">
-                <LoggedIn />
-                <button onClick={logout}>Logout</button>
-              </Route>
-            </div>
-            <div>
-              <Route path="/user">
-                {facade.getRole() === "user" ? (
-                  <User />
-                ) : (
-                  <p>Du er ikke logget ind som user</p>
-                )}
-              </Route>
-            </div>
-            <div>
-              <Route path="/admin">
-                {facade.getRole() === "admin" ? (
-                  <Admin />
-                ) : (
-                  <p>Du er ikke logget ind som admin</p>
-                )}
-              </Route>
-            </div>
+            <Route exact path="/logIn">
+              <LoggedIn logout={logout} />
+            </Route>
           </div>
         )}
       </Switch>
