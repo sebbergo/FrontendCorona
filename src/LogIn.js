@@ -57,7 +57,7 @@ function LogIn({ login, register }) {
     </Router>
   );
 }
-function LoggedIn() {
+function LoggedIn({ logout }) {
   const [dataFromServer, setDataFromServer] = useState("Loading...");
 
   useEffect(() => {
@@ -66,8 +66,11 @@ function LoggedIn() {
 
   return (
     <div>
-      <h2>Data Received from server</h2>
+      <h2>Velkommen {facade.getEmail()}! </h2>
       <h3>{dataFromServer}</h3>
+      <button className="button-login" onClick={logout}>
+        Logout
+      </button>
     </div>
   );
 }

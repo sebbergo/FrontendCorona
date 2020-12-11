@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Route, useParams, useRouteMatch } from "react-router-dom";
 
-function Header(props) {
+function Header({ loggedIn }) {
   return (
     <div>
       <ul className="header">
@@ -10,11 +10,21 @@ function Header(props) {
             Home
           </NavLink>
         </li>
-        <li>
-          <NavLink activeClassName="active" to="/logIn">
-            Login
-          </NavLink>
-        </li>
+
+        {loggedIn ? (
+          <li>
+            <NavLink activeClassName="active" to="/logIn">
+              Your account
+            </NavLink>
+          </li>
+        ) : (
+          <li>
+            <NavLink activeClassName="active" to="/logIn">
+              Login
+            </NavLink>
+          </li>
+        )}
+
         <li>
           <NavLink activeClassName="active" to="/country">
             Country
