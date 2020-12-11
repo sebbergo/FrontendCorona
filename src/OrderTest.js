@@ -27,6 +27,7 @@ function OrderTest({ orderTest }) {
       orderTestObj.zip,
       orderTestObj.street
     );
+    setOrderTestObj({ ...obj });
   };
 
   return (
@@ -34,10 +35,34 @@ function OrderTest({ orderTest }) {
       <br></br>
       <h2 style={{ marginBottom: "20px" }}>Order Test</h2>
       <form onChange={onChange}>
-        <input type="text" placeholder="Country" id="country" /> <br />
-        <input type="text" placeholder="City" id="city" /> <br />
-        <input type="text" placeholder="Zip" id="zip" /> <br />
-        <input type="text" placeholder="Street" id="street" /> <br />
+        <input
+          type="text"
+          placeholder="Country"
+          id="country"
+          value={orderTestObj.country}
+        />{" "}
+        <br />
+        <input
+          type="text"
+          placeholder="City"
+          id="city"
+          value={orderTestObj.city}
+        />{" "}
+        <br />
+        <input
+          type="text"
+          placeholder="Zip"
+          id="zip"
+          value={orderTestObj.zip}
+        />{" "}
+        <br />
+        <input
+          type="text"
+          placeholder="Street"
+          id="street"
+          value={orderTestObj.street}
+        />{" "}
+        <br />
         <button className="button-register" onClick={performOrderTest}>
           Order
         </button>
