@@ -1,6 +1,5 @@
-import facade from "./apiFacade.js";
-import React, { useState, useEffect } from "react";
-
+import React, { useState } from "react";
+import "./OrderTest.css";
 function OrderTest({ orderTest }) {
   let obj = {
     country: "",
@@ -33,40 +32,47 @@ function OrderTest({ orderTest }) {
   return (
     <div>
       <br></br>
-      <h2 style={{ marginBottom: "20px" }}>Order Test</h2>
-      <form onChange={onChange}>
-        <input
-          type="text"
-          placeholder="Country"
-          id="country"
-          value={orderTestObj.country}
-        />{" "}
-        <br />
-        <input
-          type="text"
-          placeholder="City"
-          id="city"
-          value={orderTestObj.city}
-        />{" "}
-        <br />
-        <input
-          type="text"
-          placeholder="Zip"
-          id="zip"
-          value={orderTestObj.zip}
-        />{" "}
-        <br />
-        <input
-          type="text"
-          placeholder="Street"
-          id="street"
-          value={orderTestObj.street}
-        />{" "}
-        <br />
-        <button className="button-register" onClick={performOrderTest}>
-          Order
-        </button>
-      </form>
+
+      <div className="center">
+        <h2 style={{ marginBottom: "30px" }}>Order a COVID-19 test</h2>
+        <form onChange={onChange}>
+          <input
+            className="submissionfield"
+            type="text"
+            placeholder="Country"
+            id="country"
+            value={orderTestObj.country}
+          />{" "}
+          <br />
+          <input
+            className="submissionfield"
+            type="text"
+            placeholder="City"
+            id="city"
+            value={orderTestObj.city}
+          />{" "}
+          <br />
+          <input
+            className="submissionfield"
+            type="text"
+            placeholder="Zip"
+            id="zip"
+            value={orderTestObj.zip}
+          />{" "}
+          <br />
+          <input
+            className="submissionfield"
+            type="text"
+            placeholder="Street"
+            id="street"
+            value={orderTestObj.street}
+          />{" "}
+          <br />
+          <button className="button-ordertest" onClick={performOrderTest}>
+            Order
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -2,13 +2,7 @@ import React from "react";
 import symptoms from "./images/symptoms2.jpg";
 import Image from "react-bootstrap/Image";
 import OrderTest from "./OrderTest";
-import {
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  BrowserRouter as Router,
-} from "react-router-dom";
+import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
 import "./login.css";
 
 function Symptoms() {
@@ -22,9 +16,9 @@ function Symptoms() {
 
           <h5>
             People with COVID-19 have had a wide range of symptoms reported –
-            ranging from mild symptoms to severe illness. <br></br>Symptoms may appear
-            2-14 days after exposure to the virus. People with these symptoms
-            may have COVID-19:
+            ranging from mild symptoms to severe illness. <br></br>Symptoms may
+            appear 2-14 days after exposure to the virus. People with these
+            symptoms may have COVID-19:
           </h5>
           <ul>
             <li>Fever or chills</li>
@@ -40,7 +34,9 @@ function Symptoms() {
             <li>Diarrhea </li>
           </ul>
           <Link to={"/ordertest"}>
-            <button className="button-login">Order a test!</button>
+            <button className="button-login">
+              Press here to order a test now!
+            </button>
           </Link>
         </Route>
 

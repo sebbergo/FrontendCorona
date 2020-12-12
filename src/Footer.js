@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Footer.css";
 const FooterPage = () => {
   return (
     <div className="main-footer">
@@ -11,7 +11,6 @@ const FooterPage = () => {
             <li>We hope we pass exam</li>
             <li>We love COD WZ</li>
             <li>Our group is call Kernen</li>
-
           </div>
           {/* Column2 */}
           <div className="col">
@@ -37,9 +36,9 @@ const FooterPage = () => {
         <hr />
         <div className="row">
           <p className="col-sm">
-            KERNEN FOR WZ | All rights reserved |
-            Terms Of Service | You have to love playing warzone
-        </p>
+            KERNEN FOR WZ | All rights reserved | Terms Of Service | You have to
+            love playing warzone
+          </p>
         </div>
       </div>
     </div>
