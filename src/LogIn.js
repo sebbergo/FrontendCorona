@@ -7,9 +7,8 @@ import {
   Route,
   BrowserRouter as Router,
 } from "react-router-dom";
-import "./login.css";
 import Register from "./Register";
-
+import "./login.css";
 function LogIn({ login, register }) {
   const init = { username: "", password: "" };
   const [loginCredentials, setLoginCredentials] = useState(init);

@@ -3,12 +3,12 @@ import facade from "./apiFacade";
 import LogIn, { LoggedIn } from "./LogIn.js";
 import Header from "./Header.js";
 import Country from "./Country.js";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Symptoms from "./Symptoms.js";
 import "./App.css";
 import OrderTest from "./OrderTest.js";
 import FooterPage from "./Footer.js";
-import Home from "./Home.js"
+import Home from "./Home.js";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -46,39 +46,40 @@ function App() {
   return (
     <div>
       <Header loggedIn={loggedIn} />
-      <Switch>
+      <div className="main-container">
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-      <Route path="/home">
-          <Home />
-        </Route>
+          <Route path="/country">
+            <Country />
+          </Route>
 
-        <Route path="/country">
-          <Country />
-        </Route>
+          <Route path="/symptoms">
+            <Symptoms />
+          </Route>
 
-        <Route path="/symptoms">
-          <Symptoms />
-        </Route>
+          <Route path="/orderTest">
+            <OrderTest orderTest={orderTest} />
+          </Route>
 
-        <Route path="/orderTest">
-          <OrderTest orderTest={orderTest} />
-        </Route>
-
-        {!loggedIn ? (
-          <div>
-            <Route exact path="/logIn">
-              <LogIn login={login} register={register} />
-              <p>{error}</p>
-            </Route>
-          </div>
-        ) : (
-          <div>
-            <Route exact path="/logIn">
-              <LoggedIn logout={logout} />
-            </Route>
-          </div>
-        )}
-      </Switch>
+          {!loggedIn ? (
+            <div>
+              <Route exact path="/logIn">
+                <LogIn login={login} register={register} />
+                <p>{error}</p>
+              </Route>
+            </div>
+          ) : (
+            <div>
+              <Route exact path="/logIn">
+                <LoggedIn logout={logout} />
+              </Route>
+            </div>
+          )}
+        </Switch>
+      </div>
       <FooterPage />
     </div>
   );
